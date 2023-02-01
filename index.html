@@ -11,17 +11,17 @@
     <section class="display">
     
     <section class="leftbar">
-        <form>
+        <form id="form">
 
             <legend>Add New Book</legend>
             <div>
                 <label for="title">Title: </label>
-                <input type="text" id="title" placeholder="Book's name" name="title" required>
+                <input type="text" id="title" placeholder="Book's name" name="title" required minlength="1">
             </div>
             
             <div>
                 <label for="author">Author: </label>
-                <input type="text" id="author" placeholder="Book's Author" name="author" required>
+                <input type="text" id="author" placeholder="Book's Author" name="author" required minlength="1">
             </div>
 
             <div>
@@ -31,10 +31,13 @@
 
             <div>
                 <label for="read">Read? </label>
-                <input type="checkbox" id="read" name="read">
+                <input class="check" type="checkbox" id="read" name="read">
             </div>
             <div type="submit" id="add">add</div>
         </form>
+        <div class="credits">
+            <a href="https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form">'Project: Sign-up Form'</a><a href="https://github.com/JoaquinArruiz/rock-paper-scissors">Joaquin Arruiz's github</a>
+        </div>
         
 
     </section>

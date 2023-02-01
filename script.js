@@ -17,7 +17,7 @@ class Book{
 
 //Demo Books
 let book1 = new Book('Demo Book', 'Author', 450, true)
-let book2 = new Book('Demo Book', 'Rohtua', 345, false)
+let book2 = new Book('Demo Book 2', 'Rohtua', 345, false)
 //Demo Books
 
 
@@ -43,8 +43,6 @@ let getBook = () => {
     const isRead = document.getElementById('read').checked
 
     return new Book(title, author, pages, isRead)
-
-    
 }
 
 function addBookToLibrary() {
@@ -57,6 +55,10 @@ function addBookToLibrary() {
     else {
         alert ('Book has Empty fields')
     }
+    submit.removeEventListener('click', () =>{
+        addBookToLibrary()
+    })
+    document.getElementById('form').reset()
     
 }
 
@@ -64,6 +66,7 @@ const submit = document.getElementById('add')
 submit.addEventListener('click', () =>{
     addBookToLibrary()
 })
+
 
 
 
@@ -87,10 +90,21 @@ let createBookCard = (book) => {
     card.appendChild(pages)
 
     let read = document.createElement('p')
-    read.textContent = ("Read: "+ book.read)
+    read.textContent = (ifRead(book.read))
     card.appendChild(read)
     
     return card;
+
+}
+
+let ifRead = (a) => {
+
+    if(a==true) {
+        return 'READ';
+    }
+    else{
+        return 'NOT READ';
+    }
 
 }
 

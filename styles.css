@@ -50,22 +50,75 @@ table {
 	border-spacing: 0;
 }
 
+
+
 body {
-
     background-color: rgb(165, 51, 31);
+}
 
+
+legend{
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.3);
+    color: white;
+    word-spacing: 0.2em;
 }
 
 input{
     padding-left: 1em;
+    background-color: beige;
+    border-radius: 1em;
+    align-items: center;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+    margin-top: 0.2em;
+    margin-bottom: 1em;
+    transition: step-end, 250ms;
+}
+
+input:focus{
+    color: black;
+    border: 1px solid white;
+    transform: scale(1.05);
+    transform: translateX(5px);
+    width: auto;
+}
+
+label[for="read"]{
+    padding-right: 0.3em;
+}
+
+input[type="checkbox"]{
+    margin: 0em;
+    padding: 0em;
+    width: 1em;
+}
+
+input[type="checkbox"]:focus{
+    transform: scale(1);
+    transform: translateX(0px);
+    margin: 0em;
+    padding: 0em;
+    width: auto;
+}
+
+
+
+input[type="checkbox"]:checked{
+    margin: 0em;
+    padding: 0em;
+    width: 1em;
 }
 
 label{
+    color: white;
+    font-family: 'Bebas Neue', cursive;
     padding-right: 2.5em;
-}
-
-input #read{
-    padding-left: 0em;
+    font-size: 1.5em;
+    text-shadow: 3px 3px 2px rgb(0, 0, 0, 0.3);
 }
 
 .display {
@@ -73,10 +126,13 @@ input #read{
     display: grid;
     background-color: rgb(255, 80, 49);
     grid-template: 1fr / 1fr 5fr;
+    align-items: start;
 }
 
 .leftbar {
     position: sticky;
+    align-self: start;
+    top: 0;
     background-color: rgb(190, 60, 37);
     box-shadow: 4px 4px 2px rgb(0, 0, 0, 0.5);
     margin: 0.5em;
@@ -84,10 +140,16 @@ input #read{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     grid-column: 1/2;
-    height: 90%;
+    height: auto;
     padding: 1em;
     display: flex;
     flex-direction: column;
+    transition: ease-in-out, 250ms;
+}
+
+.leftbar:hover{
+    transform: scale(1.01);
+    background-color: rgba(26, 150, 42, 0.7);
 }
 
 .leftbar #add{
@@ -98,10 +160,10 @@ input #read{
     font-size: 1em;
     height: 1em;
     width: 70%;
-    background-color: beige;
+    background-color: rgb(245, 245, 220);
     padding: 1em;
     border-radius: 1em;
-    box-shadow: 2px 2px 3px rgb(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 3px rgb(0, 0, 0, 0.5);
     transition: ease-in-out, 250ms;
 }
 
@@ -115,7 +177,35 @@ input #read{
     transform: scale(0.95);
 }
 
+.credits {
+    text-align: center;
+    display: flex;
+    padding-top: 1em;
+    font-family: 'Righteous', cursive;
+    text-decoration: none;
+    gap: 1em;
+}
 
+.credits a{
+    text-decoration: none;
+    color: wheat;
+    text-shadow: 1px 1px 2px black;
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 1em;
+    padding: 1em;
+    transition: ease-in-out, 250ms;
+    box-shadow: 4px 4px 3px rgb(0, 0, 0, 0.5);
+}
+
+.credits a:hover{
+    color: red;
+    transform: scale(1.02);
+}
+
+.credits a:active{
+    color: red;
+    transform: scale(0.95);
+}
 
 .shelf {
     grid-column: 2/3;
@@ -153,6 +243,7 @@ input #read{
 }
 
 .card h3{
+    padding-top: 0.3em;
     padding-right: 1em;
     text-align: right;
     font-family: 'Righteous', cursive;
