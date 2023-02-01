@@ -218,8 +218,8 @@ label{
 .card{
     position: relative;
     border: 1px solid black;
-    width: 10em;
-    height: 10em;
+    width: 12em;
+    height: 12em;
     margin: 1em;
     padding: 1em;
     background-color: bisque;
@@ -250,10 +250,26 @@ label{
     font-family: 'Righteous', cursive;
 }
 
+.card h4{
+    margin-top: 0.5em;
+    font-size: 1em;
+    padding: 0.2em;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-family: 'Righteous', cursive;
+    background-color: rgb(190, 60, 37);
+    border-radius: 1em;
+}
+
 .card h5{
     margin-top: 0.5em;
     font-size: 1.5em;
+    padding: 0.2em;
     text-align: center;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-family: 'Righteous', cursive;
     background-color: #fff;
     border-radius: 1em;
 }
@@ -298,8 +314,13 @@ label{
 
 @media (max-aspect-ratio: 16/11){
 
+    body{
+        font-size: 1em;
+    }
+
     .display{
         grid-template: 1fr / 1fr 2fr;
     }
 
+    
 }
