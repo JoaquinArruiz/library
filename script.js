@@ -85,12 +85,18 @@ let createBookCard = (book) => {
     author.textContent = "-" + book.author;
     card.appendChild(author);
 
-    let pages = document.createElement('p');
+    let pages = document.createElement('h4');
     pages.textContent = ("Pages: " +book.pages);
     card.appendChild(pages);
 
-    let read = document.createElement('p');
+    let read = document.createElement('h5');
     read.textContent = (ifRead(book.read));
+    if(book.read == true) {
+        read.style.backgroundColor= 'green';
+    }
+    else {
+        read.style.backgroundColor='red'
+    }
     card.appendChild(read);
 
     let deleteBtn = document.createElement('div');
@@ -113,12 +119,16 @@ let createBookCard = (book) => {
 
     toggleBtn.addEventListener('click', () => {
         let index = Library.indexOf(book);
+        if(book.read == true) {
+            read.style.backgroundColor= 'red';
+        }
+        else {
+            read.style.backgroundColor='green'
+        }
         book.read = !book.read
         read.textContent = ifRead(book.read)
         Library.splice(index, 1);
     });
-
-
     
     return card;
 };
