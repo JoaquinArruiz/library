@@ -74,28 +74,54 @@ submit.addEventListener('click', () =>{
 
 let createBookCard = (book) => {
 
-    let card = document.createElement('div')
-    card.classList.add('card')
+    let card = document.createElement('div');
+    card.classList.add('card');
 
-    let title = document.createElement('h1')
-    title.textContent = book.title
-    card.appendChild(title)
+    let title = document.createElement('h1');
+    title.textContent = book.title;
+    card.appendChild(title);
 
-    let author = document.createElement('h3')
-    author.textContent = "-" + book.author
-    card.appendChild(author)
+    let author = document.createElement('h3');
+    author.textContent = "-" + book.author;
+    card.appendChild(author);
 
-    let pages = document.createElement('p')
-    pages.textContent = ("Pages: " +book.pages)
-    card.appendChild(pages)
+    let pages = document.createElement('p');
+    pages.textContent = ("Pages: " +book.pages);
+    card.appendChild(pages);
 
-    let read = document.createElement('p')
-    read.textContent = (ifRead(book.read))
-    card.appendChild(read)
+    let read = document.createElement('p');
+    read.textContent = (ifRead(book.read));
+    card.appendChild(read);
+
+    let deleteBtn = document.createElement('div');
+    deleteBtn.textContent = "🗑️delete";
+    deleteBtn.classList.add('card-button')
+    deleteBtn.classList.add('delete-button');
+    card.appendChild(deleteBtn);
+
+    deleteBtn.addEventListener('click', () => {
+        let index = Library.indexOf(book);
+        Library.splice(index, 1);
+        shelf.removeChild(card);
+    });
+
+    let toggleBtn = document.createElement('div');
+    toggleBtn.textContent = "read👁️";
+    toggleBtn.classList.add('card-button')
+    toggleBtn.classList.add('toggle-button');
+    card.appendChild(toggleBtn);
+
+    toggleBtn.addEventListener('click', () => {
+        let index = Library.indexOf(book);
+        book.read = !book.read
+        read.textContent = ifRead(book.read)
+        Library.splice(index, 1);
+    });
+
+
     
     return card;
-
-}
+};
 
 let ifRead = (a) => {
 

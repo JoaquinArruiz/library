@@ -216,6 +216,7 @@ label{
 }
 
 .card{
+    position: relative;
     border: 1px solid black;
     width: 10em;
     height: 10em;
@@ -249,6 +250,43 @@ label{
     font-family: 'Righteous', cursive;
 }
 
+.card .card-button{
+    display: flex;
+    font-family: 'Bebas Neue', cursive;
+    background-color:  rgb(255, 207, 149);
+    padding: 0.5em;
+    border-radius: 1em;
+    color: red;
+    letter-spacing: 0.1em;
+    box-shadow: 2px 2px 3px rgb(0, 0, 0);
+    transition: ease-in-out, 250ms;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.card .toggle-button{
+    color: green;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+
+.card .delete-button {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+}
+
+.card .card-button:hover{
+    transform: scale(0.95);
+    cursor: pointer; 
+}
+
+.card .card-button:active{
+    transform: scale(0.80);
+    cursor: pointer; 
+}
 
 @media (max-aspect-ratio: 16/11){
 
