@@ -71,7 +71,7 @@ submit.addEventListener('click', () =>{
 
 
 
-
+//Create the card
 let createBookCard = (book) => {
 
     let card = document.createElement('div');
@@ -99,19 +99,19 @@ let createBookCard = (book) => {
     }
     card.appendChild(read);
 
-    let deleteBtn = document.createElement('div');
+    let deleteBtn = document.createElement('div'); //Button to eliminate the card
     deleteBtn.textContent = "🗑️delete";
     deleteBtn.classList.add('card-button')
     deleteBtn.classList.add('delete-button');
     card.appendChild(deleteBtn);
 
-    deleteBtn.addEventListener('click', () => {
+    deleteBtn.addEventListener('click', () => { //Use indexOf to find the book
         let index = Library.indexOf(book);
-        Library.splice(index, 1);
-        shelf.removeChild(card);
+        Library.splice(index, 1); // using splice to remove the book in specific
+        shelf.removeChild(card); // removing child from the 'shelf' in the html
     });
 
-    let toggleBtn = document.createElement('div');
+    let toggleBtn = document.createElement('div'); //Button to change the read status
     toggleBtn.textContent = "read👁️";
     toggleBtn.classList.add('card-button')
     toggleBtn.classList.add('toggle-button');
@@ -119,20 +119,21 @@ let createBookCard = (book) => {
 
     toggleBtn.addEventListener('click', () => {
         let index = Library.indexOf(book);
-        if(book.read == true) {
+        if(book.read == true) { //Change the background color
             read.style.backgroundColor= 'red';
         }
         else {
             read.style.backgroundColor='green'
         }
-        book.read = !book.read
-        read.textContent = ifRead(book.read)
-        Library.splice(index, 1);
+        book.read = !book.read //changing the status
+        read.textContent = ifRead(book.read) //changing the text according to the status
+        Library.splice(index, 1); //replacing it in array
     });
     
     return card;
 };
 
+//Change text inside the READ status
 let ifRead = (a) => {
 
     if(a==true) {
@@ -143,6 +144,8 @@ let ifRead = (a) => {
     }
 
 }
+
+//Show all the preload/demo books
 
 Library.forEach(book => {
     let bookCard = createBookCard(book)
