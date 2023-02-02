@@ -99,11 +99,13 @@ let createBookCard = (book) => {
     }
     card.appendChild(read);
 
+    let buttons = document.createElement('div')
+    buttons.classList.add('card-button')
+
     let deleteBtn = document.createElement('div'); //Button to eliminate the card
     deleteBtn.textContent = "🗑️delete";
-    deleteBtn.classList.add('card-button')
     deleteBtn.classList.add('delete-button');
-    card.appendChild(deleteBtn);
+    buttons.appendChild(deleteBtn);
 
     deleteBtn.addEventListener('click', () => { //Use indexOf to find the book
         let index = Library.indexOf(book);
@@ -113,9 +115,8 @@ let createBookCard = (book) => {
 
     let toggleBtn = document.createElement('div'); //Button to change the read status
     toggleBtn.textContent = "read👁️";
-    toggleBtn.classList.add('card-button')
     toggleBtn.classList.add('toggle-button');
-    card.appendChild(toggleBtn);
+    buttons.appendChild(toggleBtn);
 
     toggleBtn.addEventListener('click', () => {
         let index = Library.indexOf(book);
@@ -130,6 +131,7 @@ let createBookCard = (book) => {
         Library.splice(index, 1); //replacing it in array
     });
     
+    card.appendChild(buttons)
     return card;
 };
 
