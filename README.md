@@ -13,4 +13,4 @@ I learned a lot of js during this project.
 -----
 #### Known Issues:   
 - Need to add more validations via JS   
-- Change the script so it uses prototype to deletes/modify books instead of merge it all inside the book class   
+- Change the script so it uses prototype to deletes/modify books instead of merge it all inside the book html 
