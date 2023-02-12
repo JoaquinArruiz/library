@@ -1,6 +1,6 @@
 # Library
 
-A library prorotype
+A library prototype
 
 You can test it at: [Library: Live Page](https://joaquinarruiz.github.io/library/)
 
