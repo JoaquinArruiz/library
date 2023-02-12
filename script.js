@@ -10,7 +10,6 @@ class Book{
 }
 //Book Class
 
-
 //Book.prototype.info = function(Book) {
 //    return (Book.title + " by " + Book.author + ", "+ Book.pages +" pages, "+ Book.read)
 //}
@@ -91,7 +90,7 @@ let createBookCard = (book) => {
 
     let read = document.createElement('h5');
     read.textContent = (ifRead(book.read));
-    if(book.read == true) {
+    if(book.read == true) { //Changes background color to red or green depending on the read status
         read.style.backgroundColor= 'green';
     }
     else {
